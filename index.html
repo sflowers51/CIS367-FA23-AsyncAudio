@@ -14,23 +14,53 @@
     />
 
     <link rel="stylesheet" href="output.css" />
+
+
   </head>
-  <body class="m-0 p-0 box-border bg-gradient-to-b from-blue-500 to-blue-950 text-center h-screen flex justify-center items-center ">
-    <div id="audio-player" class="border-5 border-solid border-pink-500 p-5 w-96 my-12 mx-auto rounded-lg">
+  <body class="m-0 p-0 box-border bg-gradient-to-b from-blue-500 via-blue-700 to-blue-950 text-center h-screen flex flex-col justify-center items-center ">
+
+    <div class="flex flex-row justify-center gap-20 text-white w-80">
+      <button><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" fill="white" ><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg></button>
+      <p class="text-xs">Playing suggested song</p>
+      <button><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="white" ><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg></button>
+    </div>
+
+    <div id="audio-player" class="border-5 border-solid border-pink-500 w-80 mx-auto rounded-lg mt-4 bg-gradient-to-b from-blue-600 via-blue-700 to-blue-950 p-5">
       <div id="albumart" class="aspect-square object-cover">
-          <img src="albumart/mountain.jpg" alt="" srcset="" class="max-w-full h-72 rounded-md">
+          <img src="albumart/mountain.jpg" alt="" srcset="" class="max-w-full h-64 rounded-md">
       </div>
 
-      <div id="song-title" class="text-blue-500 text-2xl text-left">Krispie Kreme Donuts</div>
-      <div id="artist" class="text-left">Evan Kahan</div>
-
-      <audio controls id="audio-controls" class="mt-5 p-2 w-full">
-          <source src="your-audio-file.mp3" type="audio/mpeg">
+      <div class=" mt-8 mb-0  flex flex-row justify-between">
+        <div>
+          <h2 id="song-title" class="text-xl text-white text-left">Cheese Tacos</h2>
+          <h4 id="artist" class="text-left text-gray-400">Evan Kahan</h4>
+        </div>
+        <div class="flex flex-row gap-4 ">
+          <button ><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512" fill="white"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM152 232H296c13.3 0 24 10.7 24 24s-10.7 24-24 24H152c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/></svg></button>
+          <button><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512" fill="white"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg></button>
+        </div>  
+      </div>
+      
+      <audio id="audio-controls" src="your-audio-file.mp3" class="mt-2 p-2 w-full ">
           Your browser does not support the audio element.
       </audio>
-      <button class="text-white border-none px-2 py-5 text-xl cursor-pointer hover:text-black">Prev</button>
-      <button class="text-white border-none px-2 py-5 text-xl cursor-pointer hover:text-black">Play</button>
-      <button class="text-white border-none px-2 py-5 text-xl cursor-pointer hover:text-black">Next</button>
+
+      <div class="bg-white rounded-md cursor-pointer mt-6 h-1 w-full">
+        
+          <div class="bg-gray-600 rounded-md h-full"></div>
+          <div class="flex flex-row justify-between mt-2">
+            <p class="text-white text-xs text-left">0:00</p>
+            <p class="text-white text-xs text-right">3:00</p>
+          </div>
+      </div>
+
+
+      <div class="flex flex-row justify-items-center gap-8 justify-center mt-8">
+          <button class="text-white border-none px-2 py-5 text-xl  cursor-pointer hover:text-black"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 320 512" fill="white" ><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M267.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160L64 241V96c0-17.7-14.3-32-32-32S0 78.3 0 96V416c0 17.7 14.3 32 32 32s32-14.3 32-32V271l11.5 9.6 192 160z"/></svg></button>
+          <button class="text-white border-none px-2 py-5 text-xl  cursor-pointer hover:text-black"><svg xmlns="http://www.w3.org/2000/svg" height="3em" viewBox="0 0 512 512" fill="white" ><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"/></svg></button>
+          <button class="text-white border-none px-2 py-5 text-xl  cursor-pointer hover:text-black"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 320 512" fill="white" ><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M52.5 440.6c-9.5 7.9-22.8 9.7-34.1 4.4S0 428.4 0 416V96C0 83.6 7.2 72.3 18.4 67s24.5-3.6 34.1 4.4l192 160L256 241V96c0-17.7 14.3-32 32-32s32 14.3 32 32V416c0 17.7-14.3 32-32 32s-32-14.3-32-32V271l-11.5 9.6-192 160z"/></svg></button>
+
+      </div>
   </div>
 
     <script src="main.js"></script>
